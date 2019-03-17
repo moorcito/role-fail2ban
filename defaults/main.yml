@@ -1,2 +1,7 @@
 ---
-# defaults file for role-fail2ban
+f2b_bantime: 24h
+f2b_findtime: 10m
+f2b_maxretry: 10
+f2b_destemail: "{{ email }}"
+f2b_mta: sendmail
+
