@@ -1,16 +1,16 @@
 ---
 - name: Install Fail2Ban
   apt:
-          name: "fail2ban"
-          state: latest
+    name: "fail2ban"
+    state: latest
 
 - name: Template custom rules
   template:
-          src: templates/jail.local.j2
-          dest: /etc/fail2ban/jail.local
-          mode: 0644
+    src: templates/jail.local.j2
+    dest: /etc/fail2ban/jail.local
+    mode: 0644
 
 - name: Restart F2B service
   systemd:
-          name: fail2ban
-          state: restarted
+    name: fail2ban
+    state: restarted
